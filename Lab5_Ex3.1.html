@@ -3,81 +3,311 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Infographic về tác động của công nghệ đối với sự phát triển của trẻ em và video liên quan.">
-  <title>Công nghệ và sự phát triển của trẻ em</title>
+  <meta name="description" content="Hồ sơ sinh viên Nguyễn Hoài Thư và các sản phẩm bài tập về tác động của công nghệ đối với sự phát triển của trẻ em.">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Hồ sơ học tập | Nguyễn Hoài Thư</title>
   <style>
     :root {
       color-scheme: light;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #243f68;
-      background: #f5f6f2;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      color: #17243b;
+      background: #f4f7fb;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      --ink: #17243b;
+      --muted: #65738a;
+      --blue: #4263eb;
+      --line: #e5eaf2;
+      --surface: #fff;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      min-width: 320px;
       margin: 0;
       line-height: 1.6;
+      background:
+        radial-gradient(ellipse at 8% 0%, rgb(91 124 250 / 11%), transparent 34rem),
+        #f4f7fb;
+    }
+
+    a {
+      color: var(--blue);
+    }
+
+    .page-shell {
+      width: min(100% - 2.5rem, 1080px);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--ink);
+      font-weight: 750;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: 0.65rem;
+      color: #fff;
+      background: linear-gradient(135deg, #5274f5, #8257e5);
+      font-size: 0.8rem;
+    }
+
+    .topbar a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar a:hover {
+      color: var(--blue);
     }
 
     main {
-      width: min(100% - 2rem, 960px);
-      margin: 0 auto;
-      padding: 3.5rem 0 2rem;
+      padding: 2.3rem 0 4rem;
     }
 
-    header,
-    .video-section {
-      text-align: center;
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2rem, 6vw, 4.5rem);
+      border: 1px solid rgb(255 255 255 / 75%);
+      border-radius: 1.75rem;
+      background:
+        radial-gradient(circle at 90% 10%, rgb(255 255 255 / 22%), transparent 18rem),
+        linear-gradient(125deg, #243d78 0%, #435ee0 58%, #7259dc 100%);
+      box-shadow: 0 24px 70px rgb(42 62 115 / 17%);
+      color: #fff;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -5rem;
+      bottom: -11rem;
+      width: 26rem;
+      height: 26rem;
+      border: 1px solid rgb(255 255 255 / 15%);
+      border-radius: 50%;
+      content: "";
+      box-shadow: 0 0 0 2rem rgb(255 255 255 / 4%), 0 0 0 4rem rgb(255 255 255 / 3%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+      color: #dbe4ff;
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
-      color: #234474;
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      line-height: 1.15;
+      font-size: clamp(2.3rem, 6vw, 4.25rem);
+      letter-spacing: -0.055em;
+      line-height: 1.08;
     }
 
-    .intro {
-      max-width: 680px;
-      margin: 1rem auto 2.5rem;
-      color: #4c5c70;
-      font-size: 1.1rem;
+    .hero-copy {
+      max-width: 600px;
+      margin: 1.2rem 0 0;
+      color: #e4eaff;
+      font-size: clamp(1rem, 2vw, 1.15rem);
     }
 
-    figure {
-      margin: 0;
-      text-align: center;
+    .student-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      max-width: 730px;
+      margin-top: 2.2rem;
     }
 
-    figure img {
+    .detail {
+      padding: 0.9rem 1rem;
+      border: 1px solid rgb(255 255 255 / 22%);
+      border-radius: 0.85rem;
+      background: rgb(255 255 255 / 10%);
+      backdrop-filter: blur(8px);
+    }
+
+    .detail-label {
       display: block;
-      width: min(100%, 800px);
+      margin-bottom: 0.2rem;
+      color: #dbe4ff;
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 3.5rem 0 1.35rem;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(1.55rem, 4vw, 2rem);
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+    }
+
+    .work-count {
+      flex: 0 0 auto;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid #dce4ff;
+      border-radius: 999px;
+      color: #3453d1;
+      background: #edf1ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .work-card {
+      overflow: hidden;
+      margin-top: 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: 1.2rem;
+      background: var(--surface);
+      box-shadow: 0 12px 35px rgb(29 45 78 / 5%);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .card-icon {
+      display: grid;
+      flex: 0 0 auto;
+      width: 2.8rem;
+      height: 2.8rem;
+      place-items: center;
+      border-radius: 0.85rem;
+      color: #3f5ddd;
+      background: #edf1ff;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    .card-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card-header p {
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .card-content {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .pdf-frame {
+      display: block;
+      width: 100%;
+      height: min(78vh, 760px);
+      min-height: 480px;
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      background: #eef1f6;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.65rem;
+      padding: 0.55rem 1rem;
+      border-radius: 0.7rem;
+      color: #fff;
+      background: #4263eb;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .button-link:hover {
+      transform: translateY(-1px);
+      background: #3452d1;
+    }
+
+    .infographic {
+      display: block;
+      width: 100%;
       height: auto;
-      margin: 0 auto;
-      border-radius: 0.75rem;
-      box-shadow: 0 1rem 2.5rem rgb(26 48 78 / 12%);
-    }
-
-    .video-section {
-      margin-top: 4rem;
-    }
-
-    h2 {
-      margin: 0 0 1.25rem;
-      color: #234474;
-      font-size: clamp(1.5rem, 4vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: 0.8rem;
+      background: #f3f5f8;
     }
 
     .video-frame {
-      width: min(100%, 800px);
-      margin: 0 auto;
       overflow: hidden;
-      border-radius: 0.75rem;
-      background: #172b47;
-      box-shadow: 0 1rem 2.5rem rgb(26 48 78 / 12%);
+      width: 100%;
+      border-radius: 0.8rem;
+      background: #111827;
       aspect-ratio: 16 / 9;
     }
 
@@ -89,11 +319,10 @@
     }
 
     footer {
-      margin-top: 4rem;
-      padding: 1.5rem 1rem;
-      border-top: 1px solid #d5d9df;
-      color: #657185;
-      font-size: 0.9rem;
+      padding: 1.5rem 0 2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
       text-align: center;
     }
 
@@ -101,59 +330,199 @@
       margin: 0.25rem 0;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
+      .page-shell {
+        width: min(100% - 1.25rem, 1080px);
+      }
+
+      .topbar {
+        padding: 1rem 0;
+      }
+
+      .topbar-note {
+        display: none;
+      }
+
       main {
-        padding-top: 2.5rem;
+        padding-top: 1rem;
       }
 
-      .intro {
-        margin-bottom: 2rem;
+      .hero {
+        padding: 2rem 1.35rem;
+        border-radius: 1.25rem;
       }
 
-      .video-section,
-      footer {
-        margin-top: 2.75rem;
+      .student-details {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        margin-top: 1.6rem;
+      }
+
+      .detail {
+        padding: 0.7rem 0.85rem;
+      }
+
+      .section-heading {
+        align-items: start;
+        margin-top: 2.6rem;
+      }
+
+      .work-count {
+        font-size: 0.75rem;
+      }
+
+      .card-header {
+        gap: 0.75rem;
+        padding: 1.1rem;
+      }
+
+      .card-content {
+        padding: 0 1rem 1rem;
+      }
+
+      .pdf-frame {
+        height: 65vh;
+        min-height: 400px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Công nghệ và sự phát triển của trẻ em</h1>
-      <p class="intro">
-        Infographic dưới đây khái quát những ảnh hưởng của thiết bị công nghệ đến
-        trẻ và nhấn mạnh vai trò của sự cân bằng giữa thời gian sử dụng thiết bị
-        với tương tác trực tiếp.
-      </p>
-    </header>
+  <div class="page-shell">
+    <nav class="topbar" aria-label="Điều hướng chính">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">HT</span>
+        <span>Hồ sơ học tập</span>
+      </a>
+      <span class="topbar-note">Bài tập thực hành · CT005</span>
+      <a href="#san-pham">Xem sản phẩm <span aria-hidden="true">↓</span></a>
+    </nav>
 
-    <figure>
-      <img
-        src="Lab05_Ex2.1.png.png"
-        alt="Infographic về tác động của công nghệ đối với sự phát triển của trẻ, gồm số liệu khảo sát, trích dẫn chuyên gia và khuyến nghị dành cho phụ huynh"
-      >
-    </figure>
+    <main id="top">
+      <header class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Sinh viên · Hồ sơ cá nhân</p>
+          <h1>Xin chào, mình là<br>Nguyễn Hoài Thư.</h1>
+          <p class="hero-copy">
+            Đây là bộ sản phẩm bài tập về tác động của công nghệ đối với sự phát triển
+            của trẻ em, gồm báo cáo, infographic và video liên quan.
+          </p>
+          <div class="student-details" aria-label="Thông tin sinh viên">
+            <div class="detail">
+              <span class="detail-label">Họ và tên</span>
+              <span class="detail-value">Nguyễn Hoài Thư</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">MSSV</span>
+              <span class="detail-value">B2605472</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Lớp</span>
+              <span class="detail-value">DI26D2A2</span>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <section class="video-section" aria-labelledby="video-title">
-      <h2 id="video-title">Video liên quan</h2>
-      <div class="video-frame">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/zdgdUH-VVJA"
-          title="Video về tác động của công nghệ đối với sự phát triển của trẻ em"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <p>Nếu video không phát, <a href="https://youtu.be/zdgdUH-VVJA">mở video trực tiếp trên YouTube</a>.</p>
-    </section>
-  </main>
+      <section id="san-pham" aria-labelledby="works-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="works-title">Sản phẩm bài tập</h2>
+            <p>Chủ đề: Công nghệ và sự phát triển của trẻ em</p>
+          </div>
+          <span class="work-count">03 sản phẩm</span>
+        </div>
 
-  <footer>
-    <p>Ghi chú bản quyền: Infographic được tạo bằng Canva AI; hình ảnh theo ghi chú trong infographic là từ Unsplash.</p>
-    <p>Nội dung video thuộc quyền sở hữu của chủ kênh YouTube tương ứng.</p>
-  </footer>
+        <article class="work-card" aria-labelledby="report-title">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true">01</span>
+            <div>
+              <h3 id="report-title">Bài báo cáo</h3>
+              <p>Tệp PDF · Lab05_Ex1.2.pdf</p>
+            </div>
+          </div>
+          <div class="card-content">
+            <iframe
+              class="pdf-frame"
+              src="Lab05_Ex1.2.pdf"
+              title="Bài báo cáo PDF về tác động của công nghệ đối với sự phát triển của trẻ em"
+            ></iframe>
+            <div class="card-actions">
+              <span>Nếu bản xem trước không hiển thị, hãy mở hoặc tải tệp PDF.</span>
+              <a class="button-link" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">
+                Mở / tải báo cáo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" aria-labelledby="infographic-title">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true">02</span>
+            <div>
+              <h3 id="infographic-title">Infographic</h3>
+              <p>Hình ảnh PNG · Lab05_Ex2.1.png</p>
+            </div>
+          </div>
+          <div class="card-content">
+            <figure>
+              <img
+                class="infographic"
+                src="Lab05_Ex2.1.png"
+                alt="Infographic về tác động của công nghệ đối với sự phát triển của trẻ, gồm số liệu khảo sát, trích dẫn chuyên gia và khuyến nghị dành cho phụ huynh"
+                loading="lazy"
+              >
+            </figure>
+          </div>
+        </article>
+
+        <article class="work-card" aria-labelledby="video-title">
+          <div class="card-header">
+            <span class="card-icon" aria-hidden="true">03</span>
+            <div>
+              <h3 id="video-title">Video liên quan</h3>
+              <p>Video YouTube nhúng</p>
+            </div>
+          </div>
+          <div class="card-content">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/zdgdUH-VVJA"
+                title="Video về tác động của công nghệ đối với sự phát triển của trẻ em"
+                loading="lazy"
+                referrerpolicy="origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="card-actions">
+              <span>YouTube có thể chặn video khi mở trang bằng file://; hãy chạy trang qua Live Server hoặc xem trực tiếp.</span>
+              <a class="button-link" href="https://youtu.be/zdgdUH-VVJA" target="_blank" rel="noopener">
+                Xem trên YouTube
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Infographic được tạo bằng Canva AI; hình ảnh theo ghi chú trong infographic là từ Unsplash.</p>
+      <p>© Nguyễn Hoài Thư · B2605472 · DI26D2A2</p>
+    </footer>
+  </div>
 </body>
 </html>
+
